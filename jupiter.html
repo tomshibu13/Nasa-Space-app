@@ -1,0 +1,154 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+            position: relative; /* Allows stars to be placed within body */
+        }
+
+        .image {
+            position: fixed;
+            right: 0; /* Aligns the image to the right */
+            top: 0;
+            overflow: hidden; /* Ensures no overflow of the image */
+        }
+
+        .image img {
+            height: 100%; /* Ensures the image fills the div height */
+            width: 200%; /* Makes the image twice its width */
+            object-fit: cover; /* Ensures the image covers the area */
+            object-position: left; /* Aligns the sun to cover the right side */
+            position: relative;
+
+            /* Sun Rotation Animation */
+            animation: rotateSun 130s linear infinite; /* Rotate continuously */
+        }
+
+        /* Sun Rotation Keyframes */
+        @keyframes rotateSun {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center-box {
+            position: fixed;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%); /* Centers the box */
+            width: 400px;
+            height: 650px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border:1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .left-box{
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            transform: translate(-50%, -50%); /* Centers the box */
+            width: 400px;
+            height: 300px;
+        }
+
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+        .eee{
+    margin-right: 1400px;
+    margin-bottom: 600px;
+}
+
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="main.html">Explore</a>
+    </div>
+    <div class="image">
+        <img src="jupiter.png" alt="sun">
+    </div>
+
+    <div class="center-box">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align:center;  line-height: 1.8;
+"><br><br>Jupiter is the largest planet in the solar system and the fifth planet from the Sun. It is a gas giant known for its immense size, powerful storms, and iconic Great Red Spot. Jupiter has a strong magnetic field and is surrounded by a complex system of rings and moons.
+
+        </p>
+     <ul>
+       <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Size:</b> Jupiter has a diameter of about 142,984 kilometers (88,846 miles), making it over 11 times wider than Earth. Its mass is 318 times that of Earth, making it by far the largest planet in the solar system.
+    </li><br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Composition:</b> Jupiter is primarily made of hydrogen (around 90%) and helium (about 10%), similar to the Sun. It lacks a solid surface and is considered a gas giant, with a possible small rocky core deep within.</li>
+    <br>
+    
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Orbit:</b> Jupiter orbits the Sun at an average distance of about 778 million kilometers (484 million miles). It takes about 12 Earth years to complete one orbit.
+    </li>     
+</ul>
+        <!-- Content for the center box goes here -->
+    </div>
+    <div class="left-box">
+        <h1 style="text-align: center; text-indent: -5%;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 135px;line-height:90%;text-indent:-100px;">JUPITER</h1>
+
+    </div>
+
+
+    <script>
+        function createStars() {
+            const container = document.querySelector("body");
+        
+            // Loop to create 500 stars
+            for (let i = 0; i < 500; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+        
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1 + "px";
+                star.style.width = size;
+                star.style.height = size;
+        
+                // Random positions for each star
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+        
+                // Random opacity for the initial appearance
+                star.style.opacity = Math.random();
+        
+                // Append star to body
+                container.appendChild(star);
+            }
+        }
+        
+        // Call function to create stars
+        createStars();
+    </script>
+</body>
+</html>

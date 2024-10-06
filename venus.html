@@ -1,0 +1,154 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+            position: relative; /* Allows stars to be placed within body */
+        }
+
+        .image {
+            position: fixed;
+            right: 0; /* Aligns the image to the right */
+            top: 0;
+            overflow: hidden; /* Ensures no overflow of the image */
+        }
+
+        .image img {
+            height: 100%; /* Ensures the image fills the div height */
+            width: 200%; /* Makes the image twice its width */
+            object-fit: cover; /* Ensures the image covers the area */
+            object-position: left; /* Aligns the sun to cover the right side */
+            position: relative;
+
+            /* Sun Rotation Animation */
+            animation: rotateSun 130s linear infinite; /* Rotate continuously */
+        }
+
+        /* Sun Rotation Keyframes */
+        @keyframes rotateSun {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center-box {
+            position: fixed;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%); /* Centers the box */
+            width: 400px;
+            height: 650px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border:1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .left-box{
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            transform: translate(-50%, -50%); /* Centers the box */
+            width: 400px;
+            height: 300px;
+        }
+
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+
+
+        .eee{
+    margin-right: 1400px;
+    margin-bottom: 600px;
+}
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="main.html">Explore</a>
+    </div>
+    <div class="image">
+        <img src="venus.png" alt="sun">
+    </div>
+
+    <div class="center-box">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align:center;  line-height: 1.8;
+"><br><br>Venus is the second planet from the Sun and is often referred to as Earth's "sister planet" due to its similar size and composition. However, its environment is vastly different, with a scorching surface, thick toxic atmosphere, and intense surface pressures.
+     <ul>
+       <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Size:</b> Venus has a diameter of 12,104 kilometers (7,521 miles), making it nearly the same size as Earth.</li><br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Mass:</b> It has about 82% of Earth's mass.</li>
+    <br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Orbit:</b> Venus orbits the Sun at an average distance of 108 million kilometers (67 million miles). A year on Venus lasts 225 Earth days.
+    </li>
+    <br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Surface:</b>The surface of Venus is a barren, rocky landscape, with vast plains, highland regions, and thousands of volcanoes. Its surface is shaped by volcanic activity and impact craters, with little evidence of tectonic plate activity like Earth’s.
+    </li>     
+</ul>
+        <!-- Content for the center box goes here -->
+    </div>
+    <div class="left-box">
+        <h1 style="text-align: center; text-indent: -5%;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 150px;line-height:90%;text-indent:-100px;">VENUS</h1>
+
+    </div>
+
+
+    <script>
+        function createStars() {
+            const container = document.querySelector("body");
+        
+            // Loop to create 500 stars
+            for (let i = 0; i < 500; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+        
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1 + "px";
+                star.style.width = size;
+                star.style.height = size;
+        
+                // Random positions for each star
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+        
+                // Random opacity for the initial appearance
+                star.style.opacity = Math.random();
+        
+                // Append star to body
+                container.appendChild(star);
+            }
+        }
+        
+        // Call function to create stars
+        createStars();
+    </script>
+</body>
+</html>

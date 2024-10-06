@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun: Images and News</title>
+    <style>
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: black; /* You can replace this with a background image if needed */
+    background-image: url('your-background-image.jpg'); /* Optional: Replace with your actual background image URL */
+    background-size: cover; /* Ensures the background covers the entire viewport */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    color: #333;
+    margin: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling for the page */
+    padding: 0;
+}
+
+
+        header {
+            
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-section {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .news-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        .news-article {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-article h3 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .news-article p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+        .news-article{
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border:1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        h3,p{
+            color: #fff;
+        }
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="solarsystem.html">Explore</a>
+    </div>
+<header>
+    <h1>The Sun: Images and Latest News</h1>
+</header>
+
+<div class="container">
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="sun1-removebg-preview.png" alt="Sun Image 1">
+        <img src="sun2.jpg" alt="Sun Image 2">
+        <img src="sun.png" alt="Sun Image 3">
+        <img src="sun4-removebg-preview.png" alt="Sun Image 4">
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Latest Sun News</h2>
+        
+        <!-- Placeholder for dynamic news content -->
+        <div class="news-article">
+            <h3>Solar Flare Detected</h3>
+            <p>On October 5th, 2024, a powerful solar flare was observed by NASA's Solar Dynamics Observatory, causing an increase in geomagnetic activity. Experts are monitoring the situation to assess potential impacts on satellite communication and power grids.</p>
+            <a href="https://svs.gsfc.nasa.gov/14701">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>Solar Wind Speed Peaks</h3>
+            <p>The solar wind speed has recently reached 500 kilometers per second, following increased sunspot activity. This could lead to intensified auroras, especially in higher latitudes over the coming days.</p>
+            <a href="https://www.sciencenews.org/article/waves-heat-accelerate-solar-wind">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>New Sunspot Observed</h3>
+            <p>A new sunspot cluster has appeared on the Sun's surface, marking a significant uptick in solar activity. Scientists believe this may lead to more solar flares in the near future.</p>
+            <a href="https://www.gadgets360.com/science/news/sunspots-surge-to-23-year-high-as-solar-maximum-intensifies-beyond-forecasts-6494949">Read more</a>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    function createStars() {
+  const container = document.querySelector("body");
+
+  // Loop to create 500 stars
+  for (let i = 0; i < 500; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+
+      // Random size between 1px and 3px
+      const size = Math.random() * 2 + 1 + "px";
+      star.style.width = size;
+      star.style.height = size;
+
+      // Random positions for each star
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+
+      // Random opacity for the initial appearance
+      star.style.opacity = Math.random();
+
+      // Append star to body
+      container.appendChild(star);
+  }
+}
+
+// Call function to create stars
+createStars();
+</script>
+</html>

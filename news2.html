@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury: Images and News</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            background-image: url('your-background-image.jpg'); /* Optional: Replace with your actual background image URL */
+            background-size: cover; /* Ensures the background covers the entire viewport */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            color: #333;
+            margin: 0;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling for the page */
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-section {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .news-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        .news-article {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .news-article h3 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .news-article p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="solarsystem.html">Explore</a>
+    </div>
+<header>
+    <h1>Mercury: Images and Latest News</h1>
+</header>
+
+<div class="container">
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="sebu-removebg-preview.png" alt="Mercury Image 1">
+        <img src="sebut-removebg-preview.png" alt="Mercury Image 2">
+        <img src="images.jpeg" alt="Mercury Image 3">
+        <img src="mercury.png" alt="Mercury Image 4">
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Latest Mercury News</h2>
+        
+        <!-- Placeholder for dynamic news content -->
+        <div class="news-article">
+            <h3>Mercury's Surface Explored</h3>
+            <p>NASA's MESSENGER spacecraft has provided new insights into the surface composition and geological history of Mercury. These findings are reshaping our understanding of the planet.</p>
+            <a href="https://science.nasa.gov/mercury/exploration/">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>Solar Exploration: Mercury's Role</h3>
+            <p>Recent studies highlight Mercury's unique position in solar exploration, offering critical information about the Sun's influence on planetary formation.</p>
+            <a href="https://en.m.wikipedia.org/wiki/Exploration_of_Mercury#:~:text=The%20exploration%20of%20Mercury%20has,before%20entering%20orbit%20around%20Mercury">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>Mercury's Atmosphere Studied</h3>
+            <p>Scientists are investigating Mercury's thin atmosphere, which is crucial for understanding how terrestrial planets maintain their atmospheres in harsh environments.</p>
+            <a href="https://www.nasa.gov/missions/small-collisions-make-big-impact-on-mercurys-thin-atmosphere/">Read more</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function createStars() {
+        const container = document.querySelector("body");
+
+        // Loop to create 500 stars
+        for (let i = 0; i < 500; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+
+            // Random size between 1px and 3px
+            const size = Math.random() * 2 + 1 + "px";
+            star.style.width = size;
+            star.style.height = size;
+
+            // Random positions for each star
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+
+            // Random opacity for the initial appearance
+            star.style.opacity = Math.random();
+
+            // Append star to body
+            container.appendChild(star);
+        }
+    }
+
+    // Call function to create stars
+    createStars();
+</script>
+</body>
+</html>

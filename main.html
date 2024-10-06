@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Exploration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            background: #000;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding: 20px;
+
+        }
+        h1, h2, p {
+            color: white; /* Ensure all headings and text are white */
+        }
+  a:hover {
+            color: #ddd; /* Optional: Slight color change on hover */
+        }
+        /* Fullscreen Background */
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1511745700945-57e239e01f67'); /* Solar System Background */
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Send the background to the back */
+            animation: zoom 20s infinite alternate;
+        }
+
+        @keyframes zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        /* Container for Content */
+        .container {
+            padding: 100px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            position: relative;
+            color: white;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 15px rgba(0, 255, 255, 0.8);
+            animation: fadeIn 2s;
+        }
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-size: 32px;
+            margin: 40px 0 20px;
+            text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Planet Cards */
+        .planet-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .planet-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .planet-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transform: translate(-50%, -50%) rotate(30deg);
+            z-index: 0;
+            transition: transform 0.3s;
+        }
+
+        .planet-card:hover::before {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-left: 1350px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+           font-size: 20px;
+            transition: color 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #00b4b7;
+        }
+         /* Star Styles with Glow and Twinkling Effect */
+         .star {
+    position: fixed; /* Ensures stars stay fixed in place */
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 0.6), 
+                0 0 30px rgba(255, 255, 255, 0.4);
+    animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+    pointer-events: none; /* Prevents stars from being clickable or interactive */
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Fullscreen Background -->
+    <div class="bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="frontpage.html">Home</a>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Explore the Solar System</h1>
+        <p>The solar system consists of the Sun and everything that orbits it, including the eight planets, their moons, dwarf planets, comets, and asteroids. Discover the fascinating details of each planet below.</p>
+
+        <!-- The Sun -->
+
+        <a href="sun.html">
+
+             <div class="planet-card" id="sun">
+            <h2>The Sun</h2>
+            <p>The Sun is the star at the center of our solar system. It is a nearly perfect sphere of hot plasma and provides the light and heat necessary for life on Earth.</p>
+        </div>
+        </a>
+       
+
+        <!-- Mercury -->
+        <a href="mercury.html">
+        <div class="planet-card" id="mercury">
+            <h2>Mercury</h2>
+            <p>Mercury is the smallest planet in our solar system and closest to the Sun. It has a rocky body and is known for its extreme temperature fluctuations.</p>
+        </div>
+    </a>
+
+        <!-- Venus -->
+        <a href="venus.html">
+        <div class="planet-card" id="venus">
+            <h2>Venus</h2>
+            <p>Venus is similar in structure to Earth but has a thick atmosphere filled with carbon dioxide, leading to a strong greenhouse effect.</p>
+        </div>
+       </a>
+
+        <!-- Earth -->
+        <a href="earth.html">
+        <div class="planet-card" id="earth">
+            <h2>Earth</h2>
+            <p>Earth is the only planet known to support life. It has a diverse climate and a variety of ecosystems.</p>
+        </div>
+        </a>
+
+        <!-- Mars -->
+        <a href="mars.html">
+        <div class="planet-card" id="mars">
+            <h2>Mars</h2>
+            <p>Mars, known as the Red Planet, is home to the largest volcano and canyon in the solar system. It has signs of ancient water flow.</p>
+        </div>
+    </a>
+
+        <!-- Jupiter -->
+        <a href="jupiter.html">
+        <div class="planet-card" id="jupiter">
+            <h2>Jupiter</h2>
+            <p>Jupiter is the largest planet in our solar system, known for its Great Red Spot, a giant storm, and its many moons.</p>
+        </div>
+    </a>
+
+        <!-- Saturn -->
+        <a href="saturn.html">
+        <div class="planet-card" id="saturn">
+            <h2>Saturn</h2>
+            <p>Saturn is famous for its stunning rings, made up of ice and rock particles. It is a gas giant with a complex atmosphere.</p>
+        </div>
+    </a>
+
+        <!-- Uranus -->
+        <a href="uranus.html">
+        <div class="planet-card" id="uranus">
+            <h2>Uranus</h2>
+            <p>Uranus is an ice giant with a unique tilt, causing it to roll along its orbit. Its blue color comes from methane in the atmosphere.</p>
+        </div>
+        </a>
+
+        <!-- Neptune -->
+        <a href="neptune.html">
+        <div class="planet-card" id="neptune">
+            <h2>Neptune</h2>
+            <p>Neptune is the farthest planet from the Sun. It is known for its intense blue color and strong winds, the fastest in the solar system.</p>
+        </div>
+    </a>
+    </div>
+<script>
+function createStars() {
+    const container = document.querySelector("body");
+  
+    // Loop to create 500 stars
+    for (let i = 0; i < 500; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+  
+        // Random size between 1px and 3px
+        const size = Math.random() * 2 + 1 + "px";
+        star.style.width = size;
+        star.style.height = size;
+  
+        // Random positions for each star
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+  
+        // Random opacity for the initial appearance
+        star.style.opacity = Math.random();
+  
+        // Append star to body
+        container.appendChild(star);
+    }
+  }
+  
+  // Call function to create stars
+  createStars();
+
+</script>
+
+
+</body>
+</html>

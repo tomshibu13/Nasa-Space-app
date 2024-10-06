@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn: Images and News</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            background-image: url('your-background-image.jpg'); /* Replace with your actual background image URL */
+            background-size: cover; /* Ensures the background covers the entire viewport */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            background-position: center; /* Center the background image */
+            color: #333;
+            margin: 0;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling for the page */
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-section {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .news-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        .news-article {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .news-article h3 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .news-article p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        a {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="solarsystem.html">Explore</a>
+    </div>
+<header>
+    <h1>Saturn: Images and Latest News</h1>
+</header>
+
+<div class="container">
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="saturn.png" alt="Saturn Image 1">
+        <img src="satun-removebg-preview.png" alt="Saturn Image 3">
+    </div>
+
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Latest Saturn News</h2>
+        
+        <!-- Placeholder for dynamic news content -->
+        <div class="news-article">
+            <h3>New Rings Discovered Around Saturn</h3>
+            <p>A recent study has revealed new ring structures around Saturn that were previously undetected. These findings could provide insights into the planet's history and formation.</p>
+            <a href="https://science.nasa.gov/missions/cassini/scientists-discover-new-ring-and-other-features-at-saturn/">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>Exploring Saturn's Moons</h3>
+            <p>Scientists are planning missions to explore Saturn's moons, particularly Titan and Enceladus, to understand their potential for harboring life.</p>
+            <a href="https://science.nasa.gov/saturn/moons/">Read more</a>
+        </div>
+
+        <div class="news-article">
+            <h3>Saturn's Atmosphere: Latest Findings</h3>
+            <p>Recent observations have shed light on Saturn's atmospheric dynamics, including storm patterns and seasonal changes that affect its rings.</p>
+            <a href="https://phys.org/tags/saturn/#">Read more</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function createStars() {
+        const container = document.querySelector("body");
+
+        // Loop to create 500 stars
+        for (let i = 0; i < 500; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+
+            // Random size between 1px and 3px
+            const size = Math.random() * 2 + 1 + "px";
+            star.style.width = size;
+            star.style.height = size;
+
+            // Random positions for each star
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+
+            // Random opacity for the initial appearance
+            star.style.opacity = Math.random();
+
+            // Append star to body
+            container.appendChild(star);
+        }
+    }
+
+    // Call function to create stars
+    createStars();
+</script>
+</body>
+</html>

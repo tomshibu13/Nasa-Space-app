@@ -1,0 +1,151 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+            position: relative; /* Allows stars to be placed within body */
+        }
+
+        .image {
+            position: fixed;
+            right: 0; /* Aligns the image to the right */
+            top: 0;
+            overflow: hidden; /* Ensures no overflow of the image */
+        }
+
+        .image img {
+            height: 100%; /* Ensures the image fills the div height */
+            width: 200%; /* Makes the image twice its width */
+            object-fit: cover; /* Ensures the image covers the area */
+            object-position: left; /* Aligns the sun to cover the right side */
+            position: relative;
+
+            /* Sun Rotation Animation */
+            animation: rotateSun 130s linear infinite; /* Rotate continuously */
+        }
+
+        @keyframes rotateSun {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            width: 400px;
+            height: 650px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.095));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border:1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .left-box{
+            position: absolute;
+            top: 45%;
+            left: 20%;
+            transform: translate(-50%, -50%); 
+            height: 300px;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+
+
+        .eee{
+    margin-right: 1400px;
+    margin-bottom: 600px;
+}
+    </style>
+</head>
+<body>
+    <div  class="eee">
+        <a href="main.html">Explore</a>
+    </div>
+    <div class="image">
+        <img src="mars.png" alt="sun">
+    </div>
+
+    <div class="center-box">
+        <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align:center;  line-height: 1.8;
+"><br><br>Mars is the fourth planet from the Sun and often referred to as the "Red Planet" due to its reddish appearance, which is caused by iron oxide (rust) on its surface. It is one of the most studied planets in the solar system because of its potential to have harbored life in the past     </p>
+     <ul>
+       <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Size:</b>Mars has a diameter of about 6,779 kilometers (4,212 miles), making it about half the size of Earth.
+       </li><br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Orbit:</b>Mars orbits the Sun at an average distance of about 228 million kilometers (142 million miles). A year on Mars lasts 687 Earth days, almost twice as long as a year on Earth.
+    </li>
+    <br>
+    <br>
+    <li style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><b>Temperature:</b>Temperature: Mars is much colder than Earth, with average surface temperatures of around -80°C (-112°F), although temperatures can vary widely depending on the location and time of day, ranging from 20°C (68°F) near the equator during the day to -125°C (-195°F) at the poles at night.
+    </li>     
+</ul>
+        <!-- Content for the center box goes here -->
+    </div>
+    <div class="left-box">
+        <h1 style="text-align: center; text-indent: -5%;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 150px;line-height:90%;text-indent:-100px;">MARS</h1>
+
+    </div>
+
+
+    <script>
+        function createStars() {
+            const container = document.querySelector("body");
+        
+            // Loop to create 500 stars
+            for (let i = 0; i < 500; i++) {
+                const star = document.createElement("div");
+                star.className = "star";
+        
+                // Random size between 1px and 3px
+                const size = Math.random() * 2 + 1 + "px";
+                star.style.width = size;
+                star.style.height = size;
+        
+                // Random positions for each star
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+        
+                // Random opacity for the initial appearance
+                star.style.opacity = Math.random();
+        
+                // Append star to body
+                container.appendChild(star);
+            }
+        }
+        
+        // Call function to create stars
+        createStars();
+    </script>
+</body>
+</html>

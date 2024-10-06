@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+            position: relative; /* Allows stars to be placed within body */
+        }
+
+        /* Container for Content */
+        .container {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1; /* Ensure container is above stars */
+        }
+
+        h1 {
+            font-size: 64px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 15px rgba(0, 255, 255, 0.8);
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            text-shadow: 1px 1px 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .button {
+            background-color: rgba(0, 255, 255, 0.9);
+            color: #000;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.5s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .button:hover {
+            background-color: rgba(0, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        /* Star Styles with Glow and Twinkling Effect */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(255, 255, 255, 0.6), 
+                        0 0 30px rgba(255, 255, 255, 0.4);
+            animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; } /* Stars appear brightest midway through */
+        }
+    </style>
+</head>
+<body>
+    <!-- Front Page Container -->
+    <div class="container">
+        <h1>Welcome to Space Exploration</h1>
+        <p>Embark on a journey through the wonders of the universe, discovering the beauty of planets, stars, and galaxies.</p>
+        <div>
+            <a href="solarsystem.html" class="button">Solar System</a>
+            <a href="main.html" class="button">Start Exploring</a>
+        </div>
+    </div>
+    <script src="frontpage.js"></script>
+
+</body>
+<script>
+    
+</script>
+</html>

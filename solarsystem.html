@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SOLAR SYSTEM</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+    }
+
+    /* Heading */
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        color: rgb(255, 255, 255);
+        margin-bottom: 20px;
+    }
+
+    .image h1 {
+        font-size: 90px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: 0.1em;
+        margin: 0;
+    }
+
+    /* Solar System container */
+    .container {
+        font-size: 6px;
+        width: 40em;
+        height: 40em;
+        position: relative;
+        margin-bottom: 50px; /* Space between solar system and list */
+        margin-top: 150px;
+    }
+
+    .sun {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 15em;
+        left: 15em;
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        box-shadow: 0 0 3em rgb(255, 128, 0);
+        background-image: url('sun.png');
+        background-size: cover;
+    }
+
+    .mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto {
+        position: absolute;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+        border-width: 0.1em 0.1em 0 0;
+        border-radius: 50%;
+    }
+
+    /* Orbits */
+    .mercury { top: 12.5em; left: 12.5em; width: 15em; height: 15em; animation: orbit 68.7s linear infinite; }
+    .venus { top: 10em; left: 10em; width: 20em; height: 20em; animation: orbit 48.7s linear infinite; }
+    .earth { top: 6em; left: 6em; width: 28em; height: 28em; animation: orbit 36.5s linear infinite; }
+    .moon { top: 2em; right: -1em; width: 7em; height: 7em; animation: orbit 2.7s linear infinite; }
+    .mars { top: 2em; left: 2.5em; width: 36em; height: 36em; animation: orbit 26.5s linear infinite; }
+    .jupiter { top: -2em; left: -2em; width: 45em; height: 45em; animation: orbit 21s linear infinite; }
+    .saturn { top: -7em; left: -7em; width: 55em; height: 55em; animation: orbit 17s linear infinite; }
+    .uranus { top: -12em; left: -12em; width: 65em; height: 65em; animation: orbit 19s linear infinite; }
+    .neptune { top: -17em; left: -17em; width: 75em; height: 75em; animation: orbit 15s linear infinite; }
+    .pluto { top: -22em; left: -22em; width: 85em; height: 85em; animation: orbit 18s linear infinite; }
+
+    .mercury::before, .venus::before, .earth::before, .moon::before, .mars::before,
+    .jupiter::before, .saturn::before, .uranus::before, .neptune::before, .pluto::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        animation: orbit 30s linear infinite;
+    }
+
+    /* Planets */
+    .mercury::before { top: 1.5em; right: 0.8em; width: 2em; height: 2em; background-image: url('mercury.png'); background-size: cover; }
+    .venus::before { top: 2em; right: 2em; width: 2em; height: 2em; background-image: url('venus.png'); background-size: cover; }
+    .earth::before { top: 3em; right: 0em; width: 5em; height: 5em; background-image: url('earth.png'); background-size: cover; }
+    .moon::before { top: 0.8em; right: 0.2em; width: 1.2em; height: 1.2em; background-image: url('moon.png'); background-size: cover; }
+    .mars::before { top: 5em; right: 3em; width: 3em; height: 3em; background-image: url('mars.png'); background-size: cover; }
+    .jupiter::before { top: 6em; right: 3em; width: 5em; height: 5em; background-image: url('jupiter.png'); background-size: cover; }
+    .saturn::before { top: 7.5em; right: 5em; width: 4.5em; height: 4.5em; background-image: url('saturn.png'); background-size: cover; }
+    .uranus::before { top: 9em; right: 6.5em; width: 4em; height: 4em; background-image: url('uranus.png'); background-size: cover; }
+    .neptune::before { top: 10em; right: 8em; width: 4em; height: 4em; background-image: url('neptune.png'); background-size: cover; }
+    .pluto::before { top: 11em; right: 10em; width: 4em; height: 4em; background-image: url('pluto.png'); background-size: cover; }
+
+    /* Orbit Animation */
+    @keyframes orbit {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Planet list below the solar system */
+    .planet-list-section {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    ul.planets-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; /* If the list is too long, it will wrap to the next line */
+        justify-content: center;
+    }
+
+    ul.planets-list li {
+        display: flex;
+        align-items: center;
+        margin: 10px 20px; /* Space around each planet item */
+    }
+
+    ul.planets-list img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    ul.planets-list li span {
+        font-size: 24px;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 50px;
+    }
+
+     /* Star Styles with Glow and Twinkling Effect */
+     .star {
+    position: fixed; /* Ensures stars stay fixed in place */
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 0.6), 
+                0 0 30px rgba(255, 255, 255, 0.4);
+    animation: twinkle 3s infinite ease-in-out; /* Animation for twinkling */
+    pointer-events: none; /* Prevents stars from being clickable or interactive */
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+        a {
+            color: white; /* Ensure link text is white */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-left:2700px ;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+           font-size: 20px;
+            transition: color 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #00b4b7;
+        }
+</style>
+</head>
+<body>
+<body>
+
+    <nav>
+        <a href="frontpage.html">Home</a>
+    </nav>
+<h1>SOLAR SYSTEM</h1>
+<!-- Left section (List of planets) -->
+<div class="left-section">
+    <div class="list">
+        <ul class="planets-list">
+        <a href="news1.html">
+            <li><img src="sun.png" alt="Sun"><span>Sun</span></li>
+        </a>
+        <a href="news2.html">
+            <li><img src="mercury.png" alt="Mercury"><span>Mercury</span></li>
+        </a>
+        <a href="venus.html">
+            <li><img src="venus.png" alt="Venus"><span>Venus</span></li>
+        </a>
+        <a href="earth.html">
+            <li><img src="earth.png" alt="Earth"><span>Earth</span></li>
+        </a>
+        <a href="news4.html">
+            <li><img src="mars.png" alt="Mars"><span>Mars</span></li>
+        </a>
+        <a href="jupiter.html">
+            <li><img src="jupiter.png" alt="Jupiter"><span>Jupiter</span></li>
+        </a>
+        <a href="news3.html">
+            <li><img src="saturn.png" alt="Saturn"><span>Saturn</span></li>
+        </a>
+            <a href="uranus.html">
+            <li><img src="uranus.png" alt="Uranus"><span>Uranus</span></li>
+        </a>
+        <a href="neptune.html">
+            <li><img src="neptune.png" alt="Neptune"><span>Neptune</span></li>
+        </a>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Container: Left (List) + Right (Solar System) -->
+<div class="main-container">
+    
+    <!-- Right section (Solar System) -->
+    <div class="right-section">
+        <div class="container">
+            <div class="sun"></div> 
+    <div class="mercury"></div>
+    <div class="venus"></div>
+    <div class="earth">
+        <div class="moon"></div>
+    </div>
+    <div class="mars"></div>
+    <div class="jupiter"></div>
+    <div class="saturn"></div>
+    <div class="uranus"></div>
+    <div class="neptune"></div>
+    <div class="pluto"></div>
+</div>
+
+
+  <script src="solorsystem.js"></script>
+
+</body>
+</html>
